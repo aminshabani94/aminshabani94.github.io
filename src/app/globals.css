@@ -161,6 +161,7 @@ h3 { font-size: 20px; letter-spacing: -0.012em; }
 .code-panel .a { color: #ffcb6b; }
 .code-panel .f { color: #addb67; }
 .code-panel .n { color: #f78c6c; }
+.code-panel .c { color: #6b7089; font-style: italic; }
 .code-foot {
   display: flex; align-items: center; gap: 8px; padding: 11px 16px;
   border-top: 1px solid var(--line-dark); font: 11.5px var(--font-mono); color: var(--on-dark-3);

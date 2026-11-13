@@ -94,9 +94,7 @@ export default function Home() {
                 </div>
                 <pre>
                   <code>
-                    <span className="a">@HiltViewModel</span>
-                    {"\n"}
-                    <span className="k">class</span> <span className="t">TransferViewModel</span> <span className="k">@Inject constructor</span>(
+                    <span className="k">class</span> <span className="t">TransferViewModel</span>(
                     {"\n    "}
                     <span className="k">private val</span> transfer: <span className="t">TransferUseCase</span>,
                     {"\n"}) : <span className="t">MviViewModel</span>&lt;<span className="t">Intent</span>, <span className="t">State</span>&gt;(<span className="t">State</span>.Idle) {"{"}
@@ -112,11 +110,18 @@ export default function Home() {
                     {"\n            "}.catch {"{ "}emit(<span className="t">State</span>.Failed(it)){" }"}
                     {"\n    }"}
                     {"\n}"}
+                    {"\n\n"}
+                    <span className="k">val</span> transferModule = <span className="f">module</span> {"{"}
+                    {"\n    "}
+                    <span className="f">viewModelOf</span>(::<span className="t">TransferViewModel</span>)
+                    {"\n}"}
+                    {"\n"}
+                    <span className="c">{"// In a screen: koinViewModel<TransferViewModel>()"}</span>
                   </code>
                 </pre>
                 <figcaption className="code-foot">
                   <GitBranch size={14} />
-                  MVI · Coroutines · Flow · Hilt
+                  MVI · Coroutines · Flow · Koin
                 </figcaption>
               </figure>
             </div>

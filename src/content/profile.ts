@@ -307,13 +307,13 @@ export const education = [
 ] as const;
 
 export const skills = [
-  { group: "Android engineering", items: "Kotlin, Java, Android SDK, Jetpack Compose, Coroutines, Flow, KMP, CMP" },
+  { group: "Android engineering", items: "Kotlin, Java, Android SDK, Jetpack Compose, Coroutines, Flow, RxJava, KMP, CMP" },
   { group: "Architecture", items: "Clean Architecture, modular architecture, MVI, MVVM, MVP, SOLID, shared and platform-specific design" },
   { group: "Payments & devices", items: "NFC, Host Card Emulation, card tokenization, BLE wearables" },
-  { group: "Networking & data", items: "GraphQL / Apollo, Retrofit, REST, WebSocket, Socket.IO, WebRTC, Room, Realm, SQLite" },
+  { group: "Networking & data", items: "GraphQL / Apollo, Retrofit, Moshi, REST, WebSocket, Socket.IO, WebRTC, Room, Realm, SQLite" },
   { group: "Security", items: "OAuth 2.0, Android security, OWASP MASVS, PCI-DSS, penetration testing" },
   { group: "Testing & quality", items: "TDD, JUnit, MockK, Mockito, Espresso, Robolectric, screenshot tests, Detekt, quality gates" },
-  { group: "Build & CI/CD", items: "Gradle convention plugins, GitLab CI, GitHub Actions, Azure DevOps, APK signing and distribution" },
+  { group: "Build & CI/CD", items: "Gradle convention plugins, GitLab CI, GitHub Actions, Jenkins, Azure DevOps, APK signing and distribution" },
   { group: "Dependency injection", items: "Koin, Hilt, Dagger 2" },
   { group: "Platforms & tools", items: "Firebase, Crashlytics, Remote Config, Amplitude, Google Maps, OpenStreetMap, Jira, Confluence" },
   { group: "AI-assisted engineering", items: "Codex, Claude Code, Cursor, GitHub Copilot, always with careful human review" },
