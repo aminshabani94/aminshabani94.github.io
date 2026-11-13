@@ -96,27 +96,17 @@ export default function Home() {
                   <code>
                     <span className="k">class</span> <span className="t">TransferViewModel</span>(
                     {"\n    "}
-                    <span className="k">private val</span> transfer: <span className="t">TransferUseCase</span>,
-                    {"\n"}) : <span className="t">MviViewModel</span>&lt;<span className="t">Intent</span>, <span className="t">State</span>&gt;(<span className="t">State</span>.Idle) {"{"}
+                    <span className="k">private val</span> sendTransfer: <span className="t">SendTransferUseCase</span>,
+                    {"\n"}) : <span className="t">MviViewModel</span>&lt;<span className="t">TransferIntent</span>, <span className="t">TransferState</span>&gt;(<span className="t">TransferState</span>.Idle) {"{"}
                     {"\n\n    "}
-                    <span className="k">override fun</span> <span className="f">reduce</span>(i: <span className="t">Intent</span>) = <span className="k">when</span> (i) {"{"}
+                    <span className="k">override fun</span> <span className="f">handle</span>(intent: <span className="t">TransferIntent</span>) = <span className="k">when</span> (intent) {"{"}
                     {"\n        "}
-                    <span className="k">is</span> <span className="t">Intent</span>.Submit -&gt; transfer(i.draft)
+                    <span className="k">is</span> <span className="t">TransferIntent</span>.Submit -&gt; <span className="f">sendTransfer</span>(intent.draft)
                     {"\n            "}.map {"{ "}it.<span className="f">toState</span>(){" }"}
-                    {"\n            "}.onStart {"{ "}emit(<span className="t">State</span>.Sending){" }"}
-                    {"\n            "}.retryWhen {"{ "}cause, n -&gt;
-                    {"\n                "}cause.isTransient &amp;&amp; n &lt; <span className="n">3</span>
-                    {"\n            }"}
-                    {"\n            "}.catch {"{ "}emit(<span className="t">State</span>.Failed(it)){" }"}
+                    {"\n            "}.onStart {"{ "}emit(<span className="t">TransferState</span>.Sending){" }"}
+                    {"\n            "}.catch {"{ "}emit(<span className="t">TransferState</span>.Failed(it)){" }"}
                     {"\n    }"}
                     {"\n}"}
-                    {"\n\n"}
-                    <span className="k">val</span> transferModule = <span className="f">module</span> {"{"}
-                    {"\n    "}
-                    <span className="f">viewModelOf</span>(::<span className="t">TransferViewModel</span>)
-                    {"\n}"}
-                    {"\n"}
-                    <span className="c">{"// In a screen: koinViewModel<TransferViewModel>()"}</span>
                   </code>
                 </pre>
                 <figcaption className="code-foot">
