@@ -65,7 +65,7 @@ export const cases: CaseStudy[] = [
     ],
     metrics: [
       { value: "7M", suffix: "+", label: "users" },
-      { value: "3", label: "platforms: Android, iOS, web" },
+      { value: "3", label: "Android, iOS, web" },
       { value: "9", label: "Android engineers led" },
     ],
     stack: ["Kotlin", "Compose Multiplatform", "MVI", "Coroutines", "Flow", "GitLab CI"],
